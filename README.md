@@ -23,12 +23,14 @@ My Sql> SELECT nik, nama, FROM k
 My Sql> SELECT nik, nama 
         FROM k, WHERE id_dept = (SELECT id_dept, FROM dept, WHERE id_p =
         (SELECT id_p FROM p WHERE nama='Kantor Pusat'));
+
 ![Gambar 4](https://github.com/dhomuhammad/Sub_Query/blob/main/Output/ss4.png)
 
 # 5. Tampilkan nik dan nama karyawan untuk semua karyawan yang bekerja di department yang sama dengan karyawan dengan nama yang mengandung      huruf 'K' dan yang gajinya lebih besar dari rata-rata gaji semua karyawan
 My Sql> SELECT nik, nama, gaji_pokok
         FROM k, WHERE gaji_pokok > (SELECT AVG (gaji_pokok)FROM k)
         AND nama IN (SELECT nama, FROM k, WHERE nama LIKE'__k%');
+        
 ![Gambar 5](https://github.com/dhomuhammad/Sub_Query/blob/main/Output/ss5.png)
 
 
